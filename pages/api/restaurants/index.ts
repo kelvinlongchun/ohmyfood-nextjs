@@ -2,7 +2,7 @@ import type { NextApiResponse, NextApiRequest } from "next";
 import restaurantsData from "@/data/restaurants.json";
 
 type RestaurantsData = {
-  href: string;
+  name: string;
   imageSrc: string;
   imageAlt: string;
   title: string;
