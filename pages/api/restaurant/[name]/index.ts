@@ -8,8 +8,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     ? req.query.value[0]
     : req.query.value;
 
-  // const menus: MenuType[] = restautantsMenus[name] as MenuType[];
-
   type Data = {
     title: string;
     imageSrc: string;

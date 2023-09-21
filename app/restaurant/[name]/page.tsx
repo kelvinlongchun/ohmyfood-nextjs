@@ -9,7 +9,8 @@ type Props = {
 const MenuPage: FunctionComponent<Props> = async ({ params }) => {
   async function getRestaurantData() {
     const res = await fetch(
-      `http://localhost:3000/api/restaurant/${params.name}`
+      `https://kelvinlongchun.github.io/ohmyfood-nextjs/api/restaurant/${params.name}`
+      // `http://localhost:3000/api/restaurant/${params.name}`
     );
     return res.json();
   }
