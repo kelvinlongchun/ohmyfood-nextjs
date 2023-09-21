@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.footer {
+  background-color: $bottom-color;
+  padding: 1.5rem;
+
+  &__title {
+    font-family: $logo-font;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    list-style-type: none;
+
+    &__item {
+      margin: 0.5rem 0rem;
+      color: white;
+      font-size: 0.8rem;
+
+      &__icon {
+        height: 0.8rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

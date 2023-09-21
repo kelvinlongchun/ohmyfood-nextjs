@@ -1,0 +1,52 @@
+@import "../../styles/variables";
+
+.restaurant {
+  background-color: $background-color;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: $pc-width) {
+    max-width: $pc-element-max-width;
+    margin: auto;
+  }
+
+  &__imagePart {
+    &__image {
+      width: 100%;
+      height: initial;
+      aspect-ratio: 2 /1;
+      object-fit: cover;
+    }
+  }
+
+  &__new {
+    position: absolute;
+    background-color: $ter-color;
+    color: #008766;
+    top: 0.85rem;
+    right: 0.8rem;
+    padding: 0.4rem 2rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+  }
+
+  &__textPart {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 4.5rem;
+    padding: 1rem;
+    padding-right: 2rem;
+    justify-content: space-between;
+    position: relative;
+
+    &__title {
+      font-size: 1rem;
+    }
+
+    &__city {
+      font-weight: 300;
+    }
+  }
+}

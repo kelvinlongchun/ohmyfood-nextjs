@@ -1,0 +1,22 @@
+@import "../../styles/mixins";
+
+.header {
+  @include center-container;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
+
+  .header__arrow {
+    position: absolute;
+    left: 1.5rem;
+    height: 1.3rem;
+
+    .header__arrow__icon {
+      height: 100%;
+    }
+  }
+
+  &__image {
+    width: 10rem;
+    height: auto;
+    padding: 1.25rem 0rem;
+  }
+}

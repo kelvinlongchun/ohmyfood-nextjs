@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.restaurantsPart {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 1.5rem;
+  gap: 2rem;
+  background-color: $light-grey;
+
+  &__title {
+    @media (min-width: $pc-width) {
+      align-self: center;
+    }
+  }
+
+  &__restaurants {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

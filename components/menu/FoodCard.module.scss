@@ -1,0 +1,112 @@
+@import "../../styles/animations";
+@import "../../styles//variables";
+@import "../../styles/mixins";
+
+.food {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-width: 100%;
+  padding: 1rem 0.75rem;
+  padding-right: 1.5rem;
+  background-color: white;
+  height: 5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 1rem;
+  overflow: hidden;
+  opacity: 0;
+  animation-name: menu-items-show;
+  animation-delay: $menu-item-animation-delay;
+  animation-duration: $menu-item-animation-time;
+  animation-fill-mode: forwards;
+
+  &:nth-child(2) {
+    animation-delay: $menu-item-animation-delay + $menu-item-animation-time;
+  }
+
+  &:nth-child(3) {
+    animation-delay: $menu-item-animation-delay + $menu-item-animation-time * 2;
+  }
+
+  &:nth-child(4) {
+    animation-delay: $menu-item-animation-delay + $menu-item-animation-time * 3;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .food__desciption {
+      animation-name: desciption-width-become-small;
+      animation-duration: $confirmation-animation-time;
+      animation-fill-mode: forwards;
+    }
+
+    .food__price {
+      animation-name: price-move-left;
+      animation-duration: $confirmation-animation-time;
+      animation-fill-mode: forwards;
+    }
+
+    .food__confirmation {
+      animation-name: confirmation-show;
+      animation-duration: $confirmation-animation-time;
+      animation-fill-mode: forwards;
+
+      &__tick {
+        animation-name: spin;
+        animation-duration: $confirmation-animation-time;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &:not(hover) {
+    .food__desciption {
+      animation-name: desciption-width-become-small-reverse;
+      animation-duration: $confirmation-animation-time;
+    }
+
+    .food__price {
+      animation-name: price-move-right;
+      animation-duration: $confirmation-animation-time;
+    }
+
+    .food__confirmation {
+      animation-name: confirmation-hide;
+      animation-duration: $confirmation-animation-time;
+
+      &__tick {
+        animation-name: spin-reverse;
+        animation-duration: $confirmation-animation-time;
+      }
+    }
+  }
+
+  &__name {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  &__desciption {
+    color: $light-text-color;
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__confirmation {
+    position: absolute;
+    right: -4rem;
+    top: 0rem;
+    height: 100%;
+    background: $ter-color;
+    min-width: 4rem;
+    @include center-container;
+
+    &__tick {
+      height: 1.5rem;
+      color: white;
+    }
+  }
+}

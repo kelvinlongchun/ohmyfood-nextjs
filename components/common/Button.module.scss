@@ -1,0 +1,16 @@
+@import "../../styles/variables";
+
+.button {
+  color: white;
+  border-radius: 1.5rem;
+  background: linear-gradient(to bottom right, $sec-olor, $pri-color);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 9px 12px;
+    transition: 0.5s;
+  }
+}

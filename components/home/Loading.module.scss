@@ -1,0 +1,25 @@
+@import "../../styles/animations";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  @include center-container;
+  background-color: $light-grey;
+  z-index: 100;
+
+  animation-name: loading-page-hide;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+
+  &__spinner {
+    height: 4rem;
+    color: $pri-color;
+    animation-name: spin;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+}

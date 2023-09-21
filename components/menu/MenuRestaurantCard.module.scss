@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.restaurantCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background-color: $light-grey;
+  padding: 2.5rem 1rem;
+  position: relative;
+  border-radius: 2.5rem;
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      // font-family: $logo-font;
+      font-weight: 400;
+      font-size: 1.75rem;
+    }
+
+    div.heart-container {
+      margin-right: 2rem;
+    }
+  }
+
+  &__menus {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @media (min-width: $pc-width) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: initial;
+      justify-content: space-between;
+    }
+  }
+
+  &__button {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 1rem 4rem;
+    align-self: center;
+  }
+}
