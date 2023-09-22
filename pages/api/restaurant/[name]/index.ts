@@ -4,9 +4,9 @@ import restautantsMenus from "@/data/restaurants-menus.json";
 import { MenuType } from "@/components/menu/Menu";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const name = Array.isArray(req.query.value)
-    ? req.query.value[0]
-    : req.query.value;
+  const name = Array.isArray(req.query.name)
+    ? req.query.name[0]
+    : req.query.name;
 
   type Data = {
     title: string;
@@ -28,7 +28,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   restautantsMenus.map((restaurant) => {
     if (restaurant.name === name && !!name) {
-      data.menus = new Array(restaurant.menus);
+      data.menus = restaurant.menus;
     }
   });
 

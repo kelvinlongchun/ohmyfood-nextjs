@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import MenuImagePart from "@/components/menu/MenuImagePart";
 import MenuRestaurantCard from "@/components/menu/MenuRestaurantCard";
+import generalConfigs from "@/configs/general";
 
 type Props = {
   params: { name: string };
@@ -9,8 +10,7 @@ type Props = {
 const MenuPage: FunctionComponent<Props> = async ({ params }) => {
   async function getRestaurantData() {
     const res = await fetch(
-      `https://kelvinlongchun.github.io/ohmyfood-nextjs/api/restaurant/${params.name}`
-      // `http://localhost:3000/api/restaurant/${params.name}`
+      `http://${generalConfigs.domain}/api/restaurant/${params.name}`
     );
     return res.json();
   }
