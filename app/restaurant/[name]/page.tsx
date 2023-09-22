@@ -14,12 +14,12 @@ const MenuPage: FunctionComponent<Props> = async ({ params }) => {
     return res.json();
   }
 
-  const data = await getRestaurantData();
+  // const data = await getRestaurantData();
 
   return (
     <main>
-      <MenuImagePart imageSrc={data.imageSrc} imageAlt={data.title} />
-      <MenuRestaurantCard restaurantName={data.title} menus={data.menus} />
+      {/* <MenuImagePart imageSrc={data.imageSrc} imageAlt={data.title} />
+      <MenuRestaurantCard restaurantName={data.title} menus={data.menus} /> */}
     </main>
   );
 };

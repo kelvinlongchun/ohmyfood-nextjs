@@ -9,12 +9,12 @@ async function getRestaurants(): Promise<RestaurantType[]> {
 }
 
 const RestaurantsPart = async () => {
-  const restaurantsData = await getRestaurants();
+  // const restaurantsData = await getRestaurants();
 
   return (
     <section className={style.restaurantsPart}>
       <h2 className={style.restaurantsPart__title}>Restaurants</h2>
-      <div className={style.restaurantsPart__restaurants}>
+      {/* <div className={style.restaurantsPart__restaurants}>
         {restaurantsData.map((data, index) => (
           <Restaurant
             key={index}
@@ -26,7 +26,7 @@ const RestaurantsPart = async () => {
             isNew={data.isNew}
           />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
