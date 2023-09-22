@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from "react";
 import MenuImagePart from "@/components/menu/MenuImagePart";
 import MenuRestaurantCard from "@/components/menu/MenuRestaurantCard";
-import generalConfigs from "@/configs/general";
 
 type Props = {
   params: { name: string };

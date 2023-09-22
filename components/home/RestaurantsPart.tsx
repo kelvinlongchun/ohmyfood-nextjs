@@ -1,7 +1,6 @@
 import React from "react";
 import Restaurant from "@/components/home/Restaurant";
 import { RestaurantType } from "@/components/home/Restaurant";
-import generalConfigs from "@/configs/general";
 import style from "./RestaurantsPart.module.scss";
 
 async function getRestaurants(): Promise<RestaurantType[]> {
