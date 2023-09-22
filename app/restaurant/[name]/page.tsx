@@ -10,7 +10,7 @@ type Props = {
 const MenuPage: FunctionComponent<Props> = async ({ params }) => {
   async function getRestaurantData() {
     const res = await fetch(
-      `http://${generalConfigs.domain}/api/restaurant/${params.name}`
+      `${process.env.DEV_DOMAIN}/api/restaurant/${params.name}`
     );
     return res.json();
   }

@@ -5,7 +5,7 @@ import generalConfigs from "@/configs/general";
 import style from "./RestaurantsPart.module.scss";
 
 async function getRestaurants(): Promise<RestaurantType[]> {
-  const res = await fetch(`http://${generalConfigs.domain}/api/restaurants`);
+  const res = await fetch(`${process.env.DEV_DOMAIN}/api/restaurants`);
   return res.json();
 }
 
