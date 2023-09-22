@@ -4,17 +4,19 @@ import { RestaurantType } from "@/components/home/Restaurant";
 import style from "./RestaurantsPart.module.scss";
 
 async function getRestaurants(): Promise<RestaurantType[]> {
-  const res = await fetch(`${process.env.DEV_DOMAIN}/api/restaurants`);
+  const res = await fetch(`${process.env.DEV_DOMAIN}/api/restaurants`, {
+    cache: "no-store",
+  });
   return res.json();
 }
 
 const RestaurantsPart = async () => {
-  // const restaurantsData = await getRestaurants();
+  const restaurantsData = await getRestaurants();
 
   return (
     <section className={style.restaurantsPart}>
       <h2 className={style.restaurantsPart__title}>Restaurants</h2>
-      {/* <div className={style.restaurantsPart__restaurants}>
+      <div className={style.restaurantsPart__restaurants}>
         {restaurantsData.map((data, index) => (
           <Restaurant
             key={index}
@@ -26,7 +28,7 @@ const RestaurantsPart = async () => {
             isNew={data.isNew}
           />
         ))}
-      </div> */}
+      </div>
     </section>
   );
 };

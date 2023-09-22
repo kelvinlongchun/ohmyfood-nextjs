@@ -9,17 +9,20 @@ type Props = {
 const MenuPage: FunctionComponent<Props> = async ({ params }) => {
   async function getRestaurantData() {
     const res = await fetch(
-      `${process.env.DEV_DOMAIN}/api/restaurant/${params.name}`
+      `${process.env.DEV_DOMAIN}/api/restaurant/${params.name}`,
+      {
+        cache: "no-store",
+      }
     );
     return res.json();
   }
 
-  // const data = await getRestaurantData();
+  const data = await getRestaurantData();
 
   return (
     <main>
-      {/* <MenuImagePart imageSrc={data.imageSrc} imageAlt={data.title} />
-      <MenuRestaurantCard restaurantName={data.title} menus={data.menus} /> */}
+      <MenuImagePart imageSrc={data.imageSrc} imageAlt={data.title} />
+      <MenuRestaurantCard restaurantName={data.title} menus={data.menus} />
     </main>
   );
 };
